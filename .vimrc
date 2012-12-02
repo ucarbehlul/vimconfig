@@ -26,12 +26,13 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-map <leader>ls :NERDTreeToggle<CR>
 
 map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
-map <C-o> :CommandT<CR>
+map <silent> <C-o> :CommandT<CR>
+map <silent> <C-p> :MRU<CR>
+map <leader>ls :NERDTreeToggle<CR>
 
 map <C-/> :TComment<CR>
 
