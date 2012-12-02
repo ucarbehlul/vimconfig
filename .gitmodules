@@ -58,3 +58,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = git://github.com/tomtom/tcomment_vim.git

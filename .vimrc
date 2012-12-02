@@ -17,7 +17,7 @@ set expandtab
 
 let mapleader = "_"
 map <C-t> <Plug>TaskList
-map <leader>g :GundoToggle<CR>
+map <leader>h :GundoToggle<CR>
 
 let g:pyflakes_use_quickfix = 0 " quick fixi kapat
 let g:pep8_map='<leader>8'
@@ -32,6 +32,8 @@ map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
 map <C-o> :CommandT<CR>
+
+map <C-/> :TComment<CR>
 
 " vim ui "
 set background=dark " we plan to use dark background
