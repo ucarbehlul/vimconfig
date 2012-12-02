@@ -12,8 +12,11 @@ filetype plugin on
 set foldmethod=indent
 set foldlevel=99
 
+"tabs
+set expandtab
+
 let mapleader = "_"
-map <leader>td <Plug>TaskList
+map <C-t> <Plug>TaskList
 map <leader>g :GundoToggle<CR>
 
 let g:pyflakes_use_quickfix = 0 " quick fixi kapat
@@ -28,7 +31,7 @@ map <leader>ls :NERDTreeToggle<CR>
 map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
-map <leader>t :CommandT<CR>
+map <C-o> :CommandT<CR>
 
 " vim ui "
 set background=dark " we plan to use dark background
@@ -80,13 +83,18 @@ nmap <silent> <C-b><C-w> :bd<CR>
 nmap <silent> <C-b><C-n> :bnext<CR>
 nmap <silent> <C-b><C-b> :bprev<CR>
 
+"paste as in gui with ctrl-v
+nmap <silent> <C-v> p']
+imap <silent> <C-v> <ESC>p']i
+
+"delete block text in visual mode without copying
+vmap <BACKSPACE> "_d
+
 "disable middle mouse paste"
 "map <MiddleMouse> <Nop>
 "imap <MiddleMouse> <Nop>
 
 " Plugin key mappings "
-"CTRL-O for opening a new file as in normal applications
-nnoremap <C-O> :FufFile<Return>
 
 " File formats "
 au BufNewFile,BufRead  *.phtml  set syntax=php
