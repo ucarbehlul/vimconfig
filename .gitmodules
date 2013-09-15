@@ -67,3 +67,6 @@
 [submodule "bundle/latex_suite"]
 	path = bundle/latex_suite
 	url = git://github.com/ucarbehlul/LaTeX-Suite-aka-Vim-LaTeX.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
