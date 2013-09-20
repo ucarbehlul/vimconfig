@@ -8,6 +8,8 @@ filetype on
 filetype indent on
 filetype plugin on
 
+set hidden " bufferlar arasi gezerken bufferlari kapatmamasına yariyor
+
 " code folding "
 set foldmethod=indent
 set foldlevel=99
