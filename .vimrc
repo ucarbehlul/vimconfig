@@ -56,6 +56,10 @@ set wildmode=list:longest " turn on wild mode huge list
 set mouse=a " use mouse when possible
 set shortmess=aOstT " shortens messages to avoid press a key message 
 set clipboard =unnamed " use system clipboard when possible
+set pastetoggle=<F2> " toggle paste mode quickly
+
+" make p in Visual mode replace the selected text with the yank register
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Text Formatting/Layout "
 set formatoptions=rq " Automatically insert comment leader on return, and let gq format comment
