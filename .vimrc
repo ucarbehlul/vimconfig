@@ -104,6 +104,7 @@ vmap <BACKSPACE> "_d
 "imap <MiddleMouse> <Nop>
 
 " Plugin key mappings "
+nmap <F8> :TagbarToggle<CR>
 
 " File formats "
 au BufNewFile,BufRead  *.phtml  set syntax=php
