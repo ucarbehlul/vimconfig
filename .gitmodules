@@ -55,9 +55,6 @@
 [submodule "bundle/mru"]
 	path = bundle/mru
 	url = git://github.com/vim-scripts/mru.vim.git
-[submodule "bundle/latex_suite"]
-	path = bundle/latex_suite
-	url = git://github.com/ucarbehlul/LaTeX-Suite-aka-Vim-LaTeX.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
@@ -85,3 +82,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git

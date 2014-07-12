@@ -45,8 +45,8 @@ set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%
 set hlsearch        " highlight searches
 "set nohlsearch 	 " do not highlight searched for phrases
 "set incsearch       " do incremental searching
-set tabstop=4 		" numbers of spaces of tab character
-set shiftwidth=4	" numbers of spaces to (auto)indent
+set tabstop=2 		" numbers of spaces of tab character
+set shiftwidth=2	" numbers of spaces to (auto)indent
 set number          " show line numbers
 set title           " show title in console title bar
 set nostartofline   " don't jump to first character when paging
@@ -124,3 +124,6 @@ augroup json_autocmd
   autocmd FileType json set foldmethod=syntax
 augroup END
 
+" python-mode settings
+let g:pymode_lint_on_write = 0 " no checking on save, it's slow
+let g:pymode_rope_complete_on_dot = 0 " youcompleteme ile cakisiyor
