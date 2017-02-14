@@ -128,3 +128,15 @@ augroup END
 " python-mode settings
 let g:pymode_lint_on_write = 0 " no checking on save, it's slow
 let g:pymode_rope_complete_on_dot = 0 " youcompleteme ile cakisiyor
+
+let g:airline#extensions#tabline#enabled = 1 "airline buffers bar at top
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
