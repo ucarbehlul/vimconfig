@@ -3,7 +3,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set nocompatible " must be the first line
-syntax on
+syntax enable
 filetype on
 filetype indent on
 filetype plugin on
@@ -29,7 +29,6 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-
 map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
@@ -40,9 +39,11 @@ map <leader>ls :NERDTreeToggle<CR>
 map <C-/> :TComment<CR>
 
 " vim ui "
-set background=dark " we plan to use dark background
+set background=dark
+colorscheme solarized
+
 set laststatus=2 " always show status line
-set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P " a nice status line showing line column totlines
+"set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P " a nice status line showing line column totlines
 set hlsearch        " highlight searches
 "set nohlsearch 	 " do not highlight searched for phrases
 "set incsearch       " do incremental searching
