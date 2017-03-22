@@ -33,7 +33,8 @@ map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
 map <silent> <C-o> :CommandT<CR>
-map <silent> <C-p> :MRU<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
 map <leader>ls :NERDTreeToggle<CR>
 
 map <C-/> :TComment<CR>
