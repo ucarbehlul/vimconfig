@@ -91,7 +91,7 @@ nmap <silent> <C-w><C-Left> :wincmd h<CR>
 nmap <silent> <C-w><C-Right> :wincmd l<CR>
 
 "buffer navigation
-nmap <silent> <C-b><C-w> :TagbarClose<CR>:bd<CR> "Tagbar crashes if not closed on buffer deletion
+nmap <silent> <C-b><C-w> :TagbarClose<CR>:bd<CR> " Tagbar crashes if not closed on buffer deletion
 nmap <silent> <C-b><C-n> :bnext<CR>
 nmap <silent> <C-b><C-b> :bprev<CR>
 
