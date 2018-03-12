@@ -32,6 +32,7 @@ set completeopt=menuone,longest,preview
 map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
 
+let g:CommandTWildIgnore=&wildignore . ",*/bower_components,*/node_modules"
 map <silent> <C-o> :CommandT<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
