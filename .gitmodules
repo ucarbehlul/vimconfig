@@ -46,9 +46,6 @@
 [submodule "bundle/cocoa"]
 	path = bundle/cocoa
 	url = git://github.com/msanders/cocoa.vim.git
-[submodule "bundle/lusty-jungler"]
-	path = bundle/lusty-jungler
-	url = https://github.com/sjbach/lusty.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
