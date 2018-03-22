@@ -10,6 +10,7 @@ filetype plugin on
 
 set encoding=utf-8
 set hidden " bufferlar arasi gezerken bufferlari kapatmamasına yariyor
+set ignorecase "case insensitive search
 
 " code folding "
 set foldmethod=indent
