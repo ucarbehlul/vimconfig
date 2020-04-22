@@ -119,15 +119,6 @@ au BufNewFile,BufRead  modprobe.conf    set syntax=modconf
 " Run commands on startup
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
-augroup json_autocmd
-  autocmd!
-  autocmd FileType json set autoindent
-  autocmd FileType json set formatoptions=tcq2l
-  autocmd FileType json set textwidth=78 shiftwidth=2
-  autocmd FileType json set softtabstop=2 tabstop=8
-  autocmd FileType json set expandtab
-  autocmd FileType json set foldmethod=syntax
-augroup END
 
 " python-mode settings
 let g:pymode_lint_on_write = 0 " no checking on save, it's slow
