@@ -126,12 +126,8 @@ let g:pymode_rope_complete_on_dot = 0 " youcompleteme ile cakisiyor
 
 let g:airline#extensions#tabline#enabled = 1 "airline buffers bar at top
 
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"ale syntax checker
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = '❌'
+let g:ale_echo_msg_warning_str = '⚠️'
+let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
