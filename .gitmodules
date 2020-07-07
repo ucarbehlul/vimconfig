@@ -85,3 +85,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "bundle/RootIgnore"]
+	path = bundle/RootIgnore
+	url = https://github.com/octref/RootIgnore.git

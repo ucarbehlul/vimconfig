@@ -1,12 +1,10 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 set nocompatible " must be the first line
 syntax enable
 filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 set encoding=utf-8
 set hidden " bufferlar arasi gezerken bufferlari kapatmamasına yariyor
@@ -32,12 +30,6 @@ set completeopt=menuone,longest,preview
 
 map <leader>go :RopeGotoDefinition<CR>
 map <leader>re :RopeRename<CR>
-
-let g:CommandTWildIgnore=&wildignore . ",*/bower_components,*/node_modules,*.class"
-map <silent> <C-o> :CommandT<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
-map <leader>ls :NERDTreeToggle<CR>
 
 map <C-/> :TComment<CR>
 
@@ -131,3 +123,10 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = '❌'
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
+
+let g:CommandTTraverseSCM = 'pwd'
+map <silent> <C-o> :CommandT<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
+map <leader>ls :NERDTreeToggle<CR>
+
