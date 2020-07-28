@@ -88,3 +88,6 @@
 [submodule "bundle/RootIgnore"]
 	path = bundle/RootIgnore
 	url = https://github.com/octref/RootIgnore.git
+[submodule "bundle/vim-rhubarb"]
+	path = bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
