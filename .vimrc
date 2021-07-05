@@ -10,6 +10,8 @@ set encoding=utf-8
 set hidden " bufferlar arasi gezerken bufferlari kapatmamasına yariyor
 set ignorecase "case insensitive search
 
+set updatetime=1000 " ne kadar surede ui guncellenecek
+
 " code folding "
 set foldmethod=indent
 set foldlevel=99
