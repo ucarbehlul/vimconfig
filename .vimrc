@@ -37,7 +37,7 @@ map <C-/> :TComment<CR>
 
 " vim ui "
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 set laststatus=2 " always show status line
 "set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P " a nice status line showing line column totlines
@@ -131,4 +131,6 @@ map <silent> <C-o> :CommandT<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 map <leader>ls :NERDTreeToggle<CR>
+
+let g:ycm_auto_hover = ''
 
