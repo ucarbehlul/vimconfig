@@ -33,9 +33,6 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-map <leader>go :RopeGotoDefinition<CR>
-map <leader>re :RopeRename<CR>
-
 map <C-/> :TComment<CR>
 
 " vim ui "
@@ -119,7 +116,6 @@ au BufNewFile,BufRead  modprobe.conf    set syntax=modconf
 
 " python-mode settings
 let g:pymode_lint_on_write = 0 " no checking on save, it's slow
-let g:pymode_rope_complete_on_dot = 0 " youcompleteme ile cakisiyor
 
 let g:airline#extensions#tabline#enabled = 1 "airline buffers bar at top
 
@@ -128,6 +124,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = '❌'
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
+let g:ale_linters = {'java': [], 'js': []} " disable languages that coc already covers
 
 let g:CommandTTraverseSCM = 'pwd'
 map <silent> <C-o> :CommandT<CR>
