@@ -37,9 +37,6 @@
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
 	url = https://github.com/sontek/rope-vim.git
-[submodule "bundle/css3mod"]
-	path = bundle/css3mod
-	url = git://github.com/vim-scripts/css3-mod.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -100,3 +97,6 @@
 [submodule "bundle/vim-fetch"]
 	path = bundle/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
+[submodule "bundle/copilot"]
+	path = bundle/copilot
+	url = git@github.com:github/copilot.vim.git
