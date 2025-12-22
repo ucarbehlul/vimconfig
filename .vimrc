@@ -127,7 +127,7 @@ let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
 let g:ale_linters = {'java': [], 'js': []} " disable languages that coc already covers
 
 let g:CommandTTraverseSCM = 'pwd'
-map <silent> <C-o> :CommandT<CR>
+map <silent> <C-o> :KommandT<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 map <leader>ls :NERDTreeToggle<CR>
