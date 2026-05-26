@@ -22,6 +22,12 @@ Personal Vim setup managed with [vim-plug](https://github.com/junegunn/vim-plug)
 
 1. Clone this repo to `~/.vim` (or symlink `.vimrc` to `~/.vimrc`).
 
+   Alternatively, source this config from your main `~/.vimrc`:
+
+   ```vim
+   source ~/.vim/.vimrc
+   ```
+
 2. Start Vim. On first launch, vim-plug downloads itself and runs `:PlugInstall`.
 
    Or run manually:
