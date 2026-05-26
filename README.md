@@ -7,6 +7,7 @@ Personal Vim setup managed with [vim-plug](https://github.com/junegunn/vim-plug)
 | Path | Purpose |
 |------|---------|
 | `.vimrc` | Main config and plugin list |
+| `config/fzf.vim` | [fzf.vim](https://github.com/junegunn/fzf.vim) file search and key mappings |
 | `config/coc.vim` | [coc.nvim](https://github.com/neoclide/coc.nvim) mappings and settings |
 | `plugged/` | Installed plugins (gitignored) |
 | `autoload/plug.vim` | vim-plug loader (gitignored; bootstrapped on first start) |
@@ -65,7 +66,10 @@ Leader is `_` (underscore).
 | Keys | Action |
 |------|--------|
 | `<C-o>` | fzf file finder (`:Files`) |
-| `<C-p>` | CtrlP MRU |
+| `<C-p>` | fzf recently used files (`:History`, like CtrlP MRU) |
+| `<leader>b` | fzf open buffers (`:Buffers`) |
+| `<leader>g` | fzf project search (`:Rg`) |
+| `<leader>l` | fzf search in buffer (`:BLines`) |
 | `<leader>ls` | NERDTree toggle |
 | `<leader>h` | Undotree toggle |
 | `<F8>` | Tagbar toggle |
@@ -85,4 +89,4 @@ Buffer/window/tab shortcuts are defined in `.vimrc` (`<C-b>…`, `<C-w>…`, `<C
 
 This repo previously used pathogen with git submodules under `bundle/`. That layout has been removed in favor of vim-plug. Clone fresh or run `:PlugInstall` after pulling.
 
-Removed plugins (no longer in `.vimrc`): ack.vim, pydoc.vim, pep8, pytest.vim, rope-vim, vim-makegreen, css3-mod, RootIgnore, gundo (replaced by undotree), Command-T (file open uses fzf instead).
+Removed plugins (no longer in `.vimrc`): ack.vim, pydoc.vim, pep8, pytest.vim, rope-vim, vim-makegreen, css3-mod, RootIgnore, gundo (replaced by undotree), Command-T (file open uses fzf instead), ctrlp.vim (MRU uses fzf `:History` on `<C-p>`).

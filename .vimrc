@@ -24,7 +24,6 @@ Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'Raimondi/delimitMate'
 Plug 'sheerun/vim-polyglot'
@@ -166,17 +165,9 @@ let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
 let g:ale_linters = {'java': [], 'js': []} " disable languages that coc already covers
 
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-elseif executable('fd')
-  let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
-endif
-
-map <silent> <C-o> :Files<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
 map <leader>ls :NERDTreeToggle<CR>
 
 let g:ycm_auto_hover = ''
 
+source ~/.vim/config/fzf.vim
 source ~/.vim/config/coc.vim
