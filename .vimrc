@@ -1,10 +1,49 @@
-filetype off
-execute pathogen#infect()
-
 set nocompatible " must be the first line
-syntax enable
-filetype on
+
+" vim-plug bootstrap (replaces pathogen)
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+filetype off
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'tpope/vim-fugitive'
+Plug 'msanders/snipmate.vim'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree'
+Plug 'vim-scripts/TaskList.vim'
+Plug 'preservim/nerdtree'
+Plug 'kchmck/vim-coffee-script'
+Plug 'majutsushi/tagbar'
+Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'Raimondi/delimitMate'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-rhubarb'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'romainl/vim-qf'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-repeat'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-tsserver'
+Plug 'wsdjeg/vim-fetch'
+Plug 'github/copilot.vim'
+
+call plug#end()
+
 filetype plugin indent on
+syntax enable
 
 set encoding=utf-8
 set hidden " bufferlar arasi gezerken bufferlari kapatmamasına yariyor
@@ -24,10 +63,9 @@ set expandtab
 
 let mapleader = "_"
 map <C-t> <Plug>TaskList
-map <leader>h :GundoToggle<CR>
+map <leader>h :UndotreeToggle<CR>
 
 let g:pyflakes_use_quickfix = 0 " quick fixi kapat
-let g:pep8_map='<leader>8'
 
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -37,7 +75,9 @@ map <C-/> :TComment<CR>
 
 " vim ui "
 set background=dark
-colorscheme gruvbox
+if !empty(globpath(&rtp, 'colors/gruvbox.vim', 1))
+  colorscheme gruvbox
+endif
 
 set laststatus=2 " always show status line
 "set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P " a nice status line showing line column totlines
@@ -71,7 +111,7 @@ set foldmethod=manual " What to fold is defined looking at syntax
 map <silent> <PageUp> 1000<C-U>
 map <silent> <PageDown> 1000<C-D>
 imap <silent> <PageUp> <C-O>1000<C-U>
-imap <silent> <PageDown> <C-O>1000<C-D
+imap <silent> <PageDown> <C-O>1000<C-D>
 
 "tab navigation as in a browser like firefox
 nmap <C-t><C-t> :tabnew<RETURN>
@@ -126,8 +166,13 @@ let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_format = '%severity%  [%linter%] %s'
 let g:ale_linters = {'java': [], 'js': []} " disable languages that coc already covers
 
-let g:CommandTTraverseSCM = 'pwd'
-map <silent> <C-o> :CommandT<CR>
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+elseif executable('fd')
+  let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
+endif
+
+map <silent> <C-o> :Files<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 map <leader>ls :NERDTreeToggle<CR>
