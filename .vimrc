@@ -32,7 +32,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/vim-qf'
-Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-tsserver'
@@ -73,10 +72,15 @@ set completeopt=menuone,longest,preview
 map <C-/> :TComment<CR>
 
 " vim ui "
-set background=dark
-if !empty(globpath(&rtp, 'colors/gruvbox.vim', 1))
-  colorscheme gruvbox
+"set background=dark
+let theme = system('defaults read -g AppleInterfaceStyle 2>/dev/null')
+if theme =~ 'Dark'
+    set background=dark
+else
+    set background=light
 endif
+let g:solarized_termcolors=256
+colorscheme solarized
 
 set laststatus=2 " always show status line
 "set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P " a nice status line showing line column totlines
